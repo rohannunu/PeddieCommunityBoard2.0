@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Edit Post{% endblock %}
+
+{% load static %}
+<head>
+    <base href='/'>
+    <link rel="stylesheet" href="{% static 'forum/main.css' %}"> 
+</head>
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    {% if user.id == post.author.id %}
+
+        <h1>Edit Post</h1>
+        <br/>
+        <div class="form-group">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+                <button class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    {% endif %}
+{% endif %}
+
+
+{% endblock %}

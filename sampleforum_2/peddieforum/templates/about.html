@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <base href='/'>
+    <link rel="stylesheet" href="{% static 'forum/main.css' %}"> 
+</head>
+
+<body>
+<div id="about website">
+    <h1 class="h1Text" style= "text-align:center;">About the Website</h1>
+
+    <!-- Written by Karishma Gupta, Elizabeth Hu - this shows text about our website and our goals -->
+    <h5>Description</h5>
+    <p class ="detailsText">
+        Using this website, Peddie students can learn about the different clubs
+        at Peddie, as well as their meeting times. Not only does this website 
+        reduce all school emails, but having a place where students can learn 
+        more about the clubs at Peddie provides an immersive experience to all
+        that Peddie has to offer in the extracurriculars. 
+    </p>     
+
+    <h5>Goals</h5>
+    <p class="detailsText">
+        This website is to help Peddie students, whether remote or in-person,
+        connect with each other and learn more about Peddie's culture.
+    </p>
+</div>
+
+<!-- Written by Karishma Gupta, Elizabeth Hu, shows the members of the team that contributed to the website code -->
+<!-- also links in the photos located in the static page to display pictures of the members-->
+<div id="meet team">
+    <h1 class="h1Text" style= "text-align:center;">Meet the Team</h1>
+    <div class="row">
+        <div class="column">
+    <img class = "picture" src="{% static 'forum/elizabeth.jpg' %}"/>
+    <h4>Elizabeth Hu</h4>
+    <h5 class="h5">ehu-21@peddie.org</h5>
+        </div>
+        <div class="column">
+    <img class = "picture" src="{% static 'forum/karishma.jpg' %}"/>
+    <h4>Karishma Gupta</h4>
+    <h5 class="h5">kgupta-23@peddie.org</h5>
+        </div>
+        <div class="column">
+    <img class = "picture" src="{% static 'forum/matt.jpg' %}"/>
+    <h4>Mathias Prodani</h4>
+    <h5 class="h5">mprodani-21@peddie.org</h5>
+        </div>
+        <div class="column">
+    <img class = "picture" src="{% static 'forum/rohan.jpg' %}"/>
+    <h4>Rohan Nunugonda</h4>
+    <h5 class="h5">rnunugonda-22@peddie.org</h5>
+        </div>
+        <div class="column">
+    <img class = "picture" src="{% static 'forum/trent.jpg' %}"/>
+    <h4>Trent DeMesa</h4>
+    <h5 class="h5">tdemesa-21@peddie.org</h5>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+{% endblock %}

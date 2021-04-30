@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'forum/main.css' %}"> 
+</head>
+
+<!-- <ul>
+{% for post in object_list %}
+    <li><a href="{% url 'postDetail' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }}
+    {{ post.author.last_name }}<br/>
+    {{ post.body }}</li>
+{% endfor %}
+</ul> --> 
+
+<div class="container">
+    <div class="row">
+      <!-- <div class="column">
+      <h3 style="text-align:left;">Categories</h3>
+  
+    {% for item in cat_menu_list %}
+      <h4 style="text-align:left;"><a class="btn-btn primary" href="{% url 'category' item %}">{{ item }}</a></h4>
+  {% endfor %}
+  <a href="{% url 'home' %}" class="button">Back</a> -->
+
+      </div>
+        <div class="col-md-8 mt-3 left">
+          <h1>Posts</h1>
+            {% for post in object_list %}
+              {% if post.admin_approved %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <h3>{{ post.category }}</h3>
+                    <p class="card-text text-muted h6">{{ post.author.first_name }} {{ post.author.last_name }} - {{ post.post_date }}</p>
+                    <p class="card-text">{{ post.snippet }}</p>
+                    <a href="{% url 'postDetail' post.pk  %}" class="btn btn-primary" style="background-color:#153256;">Read More &rarr;</a>
+                    <a href="{% url 'category' post.category %}" class="btn btn-primary" style="background-color:#153256;">See {{ post.category }} &rarr;</a>
+                    {% if user.is_authenticated %}
+                        {% if user.id == post.author.id %}
+                            <a href="{% url 'editPost' post.pk %}" class="btn btn-primary" style="background-color:#153256;">Edit</a>
+                            <a href="{% url 'deletePost' post.pk %}" class="btn btn-warning" style="background-color:#CC9800; color:#153256;">Delete</a>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- attempted pagination (for later version)
+<div class="d-flex justify-content-end">
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+-->
+</html>
+
+{% endblock %}

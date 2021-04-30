@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<head>
+    <base href='/'>
+    <link rel="stylesheet" href="{% static 'forum/main.css' %}"> 
+</head>
+    
+{% if category_posts %}
+    <h1>{{ cats }}</h1>
+
+    <!-- <ul>
+    {% for post in object_list %}
+        <li><a href="{% url 'postDetail' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }}
+        {{ post.author.last_name }}<br/>
+        {{ post.body }}</li>
+    {% endfor %}
+    </ul> -->
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mt-3 left">
+                {% for post in category_posts %}
+                    {% if post.admin_approved %}
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                        <h3>{{ post.category }}</h3>
+                        <p class="card-text text-muted h6">{{ post.author.first_name }} {{ post.author.last_name }} - {{ post.post_date }}</p>
+                        <p class="card-text">{{ post.snippet }}</p>
+                        <a href="{% url 'postDetail' post.pk  %}" class="btn btn-primary" style="background-color:#153256;">Read More &rarr;</a>
+                        {% if user.is_authenticated %}
+                            {% if user.id == post.author.id %}
+                            <a href="{% url 'editPost' post.pk %}" class="btn btn-primary" style="background-color:#153256;">Edit</a>
+                            <a href="{% url 'deletePost' post.pk %}" class="btn btn-warning" style="background-color:#CC9800; color:#153256;">Delete</a>
+                            {% endif %}
+                        {% endif %}
+                        {% endif %}
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% else %}
+    <h2>Sorry this page doesn't exist...</h2>
+{% endif %}
+{% endblock %}

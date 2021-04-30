@@ -1,0 +1,138 @@
+/* Written by Karishma Gupta, Elizabeth Hu, Trent DeMesa
+these formats will be applied to the code in html 
+examples of the formats are colors of text, size of text, font, etc. */
+
+
+
+.nav-link {
+    color: goldenrod !important;
+}
+
+#error {
+    color: red;
+}
+.picture {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    border: 2px solid black;
+    border-radius: 2px;
+}
+ 
+a.post:link, a.post:visited{
+    display: inline-block;
+    background-color: #1c4587;
+    color: goldenrod;
+    font-weight: bold; 
+    font-size: 16px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px; 
+    width: auto;
+    height: auto;
+    text-align:center;
+}
+
+a.post:hover, a.post:active{
+    background-color: blue;
+}
+
+a.tag1:link, a.tag1:visited{
+    display: inline-block;
+    background-color: red;
+    color: white;
+    font-weight: bold; 
+    font-size: 16px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    text-align:center;
+    width:200px;
+}
+
+a.tag1:hover, a.tag1:active{
+    background-color: lightcoral;
+}
+
+.detailsText {
+    font-size: 16px;
+    color: rgb(180, 135, 20);
+    padding: 10px;
+}
+
+.column{
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+/* .h1Text{
+    color: black;
+    text-align:left;
+    font-size: 30px;
+    font-family: "brandon-grotesque", sans-serif;
+    padding: 10px;
+} */
+
+/* .h2Text {
+    color: blue;
+    text-align:left;
+    font-size: 20px;
+    font-family: "brandon-grotesque", sans-serif;
+    padding: 10px;
+} */
+
+/* h1 {
+    font-size: 18px;
+    color: goldenrod;
+    text-align:center;
+    font-family: "brandon-grotesque", sans-serif;
+} */
+/* h3 {
+    font-size: 12px;
+    color: black;
+    font-family: "brandon-grotesque", sans-serif;
+} */
+
+/* p{
+    font-size: medium;
+} */
+
+/* *{
+    box-sizing:border-box;
+} */
+
+/* .column{
+    float:left;
+    padding:10 px;
+
+} */
+/* .left{
+    width:25%;
+} */
+
+/* .right{
+    width:75%;
+} */
+
+/* .row:after{
+    content:"";
+    display: table;
+    clear: both;
+} */
+
+/* .picture {
+    display: block;
+    justify-content:center;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:5%;
+    padding: 10px;
+} */
+
+/* .table{
+    table-layout: auto;
+  width: 80%;  
+} */

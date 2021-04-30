@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Comment Form{% endblock %}
+
+{% block content %}
+
+{% load static %}
+<head>
+    <base href='/'>
+    <link rel="stylesheet" href="{% static 'forum/main.css' %}"> 
+</head>
+    {% if user.is_authenticated  %}
+    <h1>Add Comment</h1>
+    <br/>
+    <div class="form-group">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-primary">Add Comment</button>
+        </form>
+    </div>
+    
+    {% else %}
+        <h1>Please login to make a comment</h1>
+        <h2 href="{url  'login' %}">Login</h2>
+
+    {% endif  %}
+
+
+{% endblock %}

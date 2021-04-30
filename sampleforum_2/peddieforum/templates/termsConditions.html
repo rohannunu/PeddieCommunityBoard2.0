@@ -1,0 +1,51 @@
+<!--created by Elizabeth-->
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <base href='/'>
+    <link rel="stylesheet" href="{% static 'forum/main.css' %}"> 
+</head>
+
+<body>
+    <!-- shows terms and conditions for the site as a list-->
+<div>
+    <h1 class="h1Text">Terms and Conditions</h1>
+    <ol class="detailsText">
+        <li>
+            Access to the Forum
+        </li>
+        <ul>
+            <li>
+                You must be a current student at The Peddie School
+            </li>
+            <li>
+                Sign up with your Peddie email address to be able to access the forum
+            </li>
+        </ul>
+        <li>
+             Use of the Forum
+        </li>
+        <ul>
+            <li>
+                By posting content on the forum, you agree to our moderation policies, 
+                and all the administrators will be able to preview your response before
+                it goes public
+            </li>
+            <li>
+                You must be respectful to everyone on the forum and don't post anything 
+                inappropriate
+            </li>
+            <li>
+                Other rules that apply to Peddie's internet services apply to this 
+                forum as well
+            </li>
+        </ul>
+    </ol>
+</div>
+</body>
+</html>
+{% endblock %}
