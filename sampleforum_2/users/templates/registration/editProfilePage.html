@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+
+{% load static %}
+<head>
+    <base href='/'>
+    <link rel="stylesheet" href="{% static 'forum/main.css' %}"> 
+</head>
+
+{% if user.is_authenticated %}
+    <h1>Edit Profile Page</h1>
+    <br/>
+    <div class="form-group">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p }}
+            <button class="btn btn-primary">Post</button>
+        </form>
+    </div>
+
+    <script>
+        var name = "{{ user.id }}";
+        document.getElementById("elder").value = name;
+    </script>
+{% endif %}
+
+
+{% endblock %}

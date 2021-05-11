@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<h1>User Profile</h1>
+<br/>
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      
+      <div class="col-md-10">
+        <div class="card-body">
+          <h5 class="card-title">{{ current_user.user.first_name}} {{ current_user.user.last_name}}</h5>
+          <p class="card-text">{{ current_user.user_bio}}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br/><br/>
+
+{% endblock %}

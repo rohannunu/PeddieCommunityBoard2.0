@@ -50,13 +50,13 @@
 <!-- Still need to edit this part -->
 <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
-      <div class="col-md-2">
-        <img src="{{post.author.profile.profile_pic.url}}">
-      </div>
+      
       <div class="col-md-10">
         <div class="card-body">
           <h5 class="card-title">{{ post.author.first_name}} {{ post.author.last_name}}</h5>
           <p class="card-text">{{post.author.profile.user_bio}}</p>
+
+          <a href="{% url 'showProfilePage' post.author.userprofile.id %}">Profile Page</a>
         </div>
       </div>
     </div>
