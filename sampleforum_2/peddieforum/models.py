@@ -16,7 +16,6 @@ class Category(models.Model):
 class UserProfile(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     user_bio = models.TextField()
-    profile_pic = models.ImageField(null=True, blank=True, upload_to="images/profile/")
     
     
 

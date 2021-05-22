@@ -19,10 +19,30 @@ examples of the formats are colors of text, size of text, font, etc. */
     border: 2px solid black;
     border-radius: 2px;
 }
- 
+
+a.post:hover{
+    background-color: red;
+}
+
+a.post:active{
+    color: goldenrod;
+    display: inline-block;
+    background-color: red;
+    font-weight: bold; 
+    font-size: 16px;
+    padding: 10px 20px;        
+    text-decoration: none;
+    border: none;
+    border-radius: 10px; 
+    width: auto;
+    height: auto;
+    text-align:center;
+}
+
+/*
 a.post:link, a.post:visited{
     display: inline-block;
-    background-color: #1c4587;
+    background-color: red;
     color: goldenrod;
     font-weight: bold; 
     font-size: 16px;
@@ -35,9 +55,23 @@ a.post:link, a.post:visited{
     text-align:center;
 }
 
+
 a.post:hover, a.post:active{
     background-color: blue;
+    display: inline-block;
+    background-color: black;
+    color: goldenrod;
+    font-weight: bold; 
+    font-size: 16px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px; 
+    width: auto;
+    height: auto;
+    text-align:center;
 }
+
 
 a.tag1:link, a.tag1:visited{
     display: inline-block;
@@ -55,6 +89,7 @@ a.tag1:link, a.tag1:visited{
 a.tag1:hover, a.tag1:active{
     background-color: lightcoral;
 }
+*/
 
 .detailsText {
     font-size: 16px;

@@ -17,7 +17,8 @@
 </ul> --> 
 
 <div class="container">
-    <div class="row">
+  <div class="row">
+  <div class="column" style="width:80%">
       <!-- <div class="column">
       <h3 style="text-align:left;">Categories</h3>
   
@@ -26,9 +27,8 @@
   {% endfor %}
   <a href="{% url 'home' %}" class="button">Back</a> -->
 
-      </div>
-        <div class="col-md-8 mt-3 left">
-          <h1>Posts</h1>
+        <div class="col-md-8 mt-3 left" style="text-align: left;">
+          <h1 style="text-align: left;">Posts</h1>
             {% for post in object_list %}
               {% if post.admin_approved %}
             <div class="card mb-4">
@@ -46,12 +46,17 @@
                         {% endif %}
                     {% endif %}
                 {% endif %}
-
                 </div>
             </div>
             {% endfor %}
-        </div>
+  </div>
+</div>
+
+  <div class="column" style="width:20%">
+    <div class="card-body">
+        <a class="post">New Post</a>
     </div>
+  </div>
 </div>
 
 <!-- attempted pagination (for later version)

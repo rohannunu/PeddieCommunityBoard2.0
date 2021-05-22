@@ -24,6 +24,10 @@ class UserEditView(generic.UpdateView):
 class EditProfilePageView(generic.UpdateView):
     model = UserProfile
     template_name = 'registration/editProfilePage.html'
+    fields = ['user_bio']
+    success_url = reverse_lazy('home')
+
+
 
 class PasswordsChangeView(PasswordChangeView):
     form_class = PasswordChangingForm
