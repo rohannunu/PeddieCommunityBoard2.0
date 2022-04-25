@@ -14,6 +14,9 @@ urlpatterns = [
     path('termsConditions/', views.termsConditionsView, name='termsConditions'), 
     path('aboutUs/', views.aboutView, name='about'),
     path('post/<int:pk>/comment', views.AddCommentView.as_view(), name='addComment'),
+    path('calendar/<int:year>/<str:month>', views.calendarView, name="calendar"),
+    # path('calendar/<int:year>/<str:month>/', views.calendarView, name="calendarPage" ), 
+    #path('<int:year>/<str:month>', views.calendar, name="calendar")                                                          
 
 
 ]

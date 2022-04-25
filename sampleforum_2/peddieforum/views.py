@@ -3,7 +3,11 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import Post, Category, Comment
 from .forms import PostForm, EditForm, CommentForm
 from django.urls import reverse_lazy, reverse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
+import calendar
+from calendar import HTMLCalendar
+
+
 
 class HomeView(ListView):
     model = Post
@@ -117,3 +121,30 @@ class AddCommentView(CreateView):
         return super().form_valid(form)
     success_url = reverse_lazy('home')
 
+
+
+# def calendarView(request, year, month):
+#     month = month.capitalize()
+#     month_number = int(list(calendar.month_name).index(month))
+#     cal = HTMLCalendar().formatmonth(year, month_number)
+#     context = {
+#         "year": year,
+#         "month": month,
+#         "cal": cal,
+#     }
+#     return render(request, 'calendar.html', context)
+
+def calendar(request):
+    return HttpResponse('hello')
+
+def calendarView(request, year, month):
+    # Doing some tests first, will change this to have the calendar soon. 
+    name = "Rohan"
+    return render(request, 
+        'calendar.html', {
+            "name": name,
+            "year": year, 
+            "month": month,
+        })
+
+    
