@@ -6,6 +6,7 @@ from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect, HttpResponse
 import calendar
 from calendar import HTMLCalendar
+from datetime import datetime
 
 
 
@@ -121,30 +122,28 @@ class AddCommentView(CreateView):
         return super().form_valid(form)
     success_url = reverse_lazy('home')
 
-
-
-# def calendarView(request, year, month):
-#     month = month.capitalize()
-#     month_number = int(list(calendar.month_name).index(month))
-#     cal = HTMLCalendar().formatmonth(year, month_number)
-#     context = {
-#         "year": year,
-#         "month": month,
-#         "cal": cal,
-#     }
-#     return render(request, 'calendar.html', context)
-
-def calendar(request):
-    return HttpResponse('hello')
-
 def calendarView(request, year, month):
     # Doing some tests first, will change this to have the calendar soon. 
-    name = "Rohan"
+    name = request.user
+
+    #Convert month from name to number
+    month = month.capitalize()
+    month_number = int(list(calendar.month_name).index(month))
+
+    #Create Calendar
+    cal = HTMLCalendar().formatmonth(year, month_number)
+    time_now = datetime.now()
+    current_year = time_now.year
+    current_time = time_now.strftime('%I:%M %p')
     return render(request, 
         'calendar.html', {
             "name": name,
             "year": year, 
             "month": month,
+            "month_number": month_number,
+            "cal": cal,
+            "current_year": current_year, 
+            "current_time": current_time,
         })
 
     
